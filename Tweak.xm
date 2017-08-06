@@ -133,4 +133,6 @@ static void reloadPrefs() {
 %ctor {
 	reloadPrefs();
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)reloadPrefs, kSettingsChangedNotification, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+
+	dlopen("/Library/MobileSubstrate/DynamicLibraries/ScreenshotXI.dylib", RTLD_LAZY);
 }
