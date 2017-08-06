@@ -99,6 +99,12 @@ static void reloadPrefs() {
 				}];
 				[alert addAction:cancel];
 				[[[UIApplication sharedApplication].keyWindow rootViewController] presentViewController:alert animated:YES completion:nil];
+			} else if (disabledAction == kShakeLockscreen) {
+				CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
+				animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+				animation.duration = 0.15;
+				animation.values = @[ @(-15), @(15), @(-15), @(15), @(-7.5), @(7.5), @(-3), @(3), @(0) ];
+				[[[UIApplication sharedApplication].keyWindow rootViewController].view.layer addAnimation:animation forKey:@"shake"];
 			}
 			return;
 		}

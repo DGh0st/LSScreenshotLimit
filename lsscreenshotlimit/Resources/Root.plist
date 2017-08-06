@@ -56,7 +56,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>select action to perform when more screenshots are attempted after reaching the limit</string>
+			<string>Select action to perform when more screenshots are attempted after reaching the limit</string>
 		</dict>
 		<dict>
 			<key>cell</key>
