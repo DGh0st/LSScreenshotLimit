@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.dgh0st.lsscreenshotlimit</string>
+			<key>key</key>
+			<string>isEnabled</string>
+			<key>label</key>
+			<string>Enable</string>
+			<key>PostNotification</key>
+			<string>com.dgh0st.lsscreenshotlimit/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Limit</string>
+			<key>footerText</key>
+			<string>Set the amount of screenshots that can be taken before disabling it</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>default</key>
+			<integer>10</integer>
+			<key>defaults</key>
+			<string>com.dgh0st.lsscreenshotlimit</string>
+			<key>key</key>
+			<string>screenshotLimit</string>
+			<key>isNumeric</key>
+			<true/>
+			<key>PostNotification</key>
+			<string>com.dgh0st.lsscreenshotlimit/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>save</string>
+			<key>action</key>
+			<string>save</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>select action to perform when more screenshots are attempted after reaching the limit</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<integer>0</integer>
+			<key>defaults</key>
+			<string>com.dgh0st.lsscreenshotlimit</string>
+			<key>key</key>
+			<string>disabledAction</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>validValues</key>
+				<array>
+					<integer>0</integer> <!--Fake Flash-->
+					<integer>1</integer> <!--Red Flash-->
+					<integer>2</integer> <!--Alert-->
+					<integer>3</integer> <!--Shake losckreen-->
+				</array>
+			<key>validTitles</key>
+				<array>
+					<string>Fake flash (White)</string>
+					<string>Red flash</string>
+					<string>Alert</string>
+					<string>Shake lockscreen</string>
+				</array>
+			<key>label</key>
+			<string>Disable Notification</string>
+			<key>PostNotification</key>
+			<string>com.dgh0st.lsscreenshotlimit/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Alert Message</string>
+			<key>footerText</key>
+			<string>Set custom message to be displayed in the alert</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>default</key>
+			<string>Really? You thought this would work? Well you thought wrong.</string>
+			<key>defaults</key>
+			<string>com.dgh0st.lsscreenshotlimit</string>
+			<key>key</key>
+			<string>customAlertMessage</string>
+			<key>PostNotification</key>
+			<string>com.dgh0st.lsscreenshotlimit/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>save</string>
+			<key>action</key>
+			<string>save</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Alert Buttom</string>
+			<key>footerText</key>
+			<string>Set custom button text to be displayed in the alert</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>default</key>
+			<string>Sorry</string>
+			<key>defaults</key>
+			<string>com.dgh0st.lsscreenshotlimit</string>
+			<key>key</key>
+			<string>customAlertButton</string>
+			<key>PostNotification</key>
+			<string>com.dgh0st.lsscreenshotlimit/settingschanged</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>save</string>
+			<key>action</key>
+			<string>save</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Credits</string>
+			<key>footerText</key>
+			<string>Enjoy the tweak :)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>action</key>
+			<string>email</string>
+			<key>label</key>
+			<string>Email Support</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>action</key>
+			<string>donate</string>
+			<key>label</key>
+			<string>Donate</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>action</key>
+			<string>follow</string>
+			<key>label</key>
+			<string>Follow on twitter</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerAlignment</key>
+			<integer>1</integer>
+			<key>footerText</key>
+			<string>LSScreenshotLimit © 2017 DGh0st</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>LSScreenshotLimit</string>
+</dict>
+</plist>
