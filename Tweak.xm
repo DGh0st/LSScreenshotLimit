@@ -18,13 +18,13 @@ typedef enum DisabledAction{
 	kShakeLockscreen
 } DisabledAction;
 
-BOOL isEnabled = YES;
-NSInteger screenshotLimit = 10;
-DisabledAction disabledAction = kFakeFlash;
-NSString *customAlertMessage = @"Really? You thought this would work? Well you thought wrong.";
-NSString *customAlertButton = @"Sorry";
+static BOOL isEnabled = YES;
+static NSInteger screenshotLimit = 10;
+static DisabledAction disabledAction = kFakeFlash;
+static NSString *customAlertMessage = @"Really? You thought this would work? Well you thought wrong.";
+static NSString *customAlertButton = @"Sorry";
 
-NSInteger currentSessionCount = 0;
+static NSInteger currentSessionCount = 0;
 
 static void reloadPrefs() {
 	CFPreferencesAppSynchronize((CFStringRef)kIdentifier);
@@ -85,7 +85,7 @@ static void reloadPrefs() {
 %end
 
 %hook SBScreenShotter
--(void)saveScreenshotsShowingFlash:(BOOL)arg1 completion:(id)arg2 {
+-(void)saveScreenshot:(BOOL)arg1 {
 	if (isEnabled && [(SpringBoard *)[%c(SpringBoard) sharedApplication] isLocked]) {
 		if (currentSessionCount >= screenshotLimit) {
 			if (disabledAction == kFakeFlash) {
@@ -110,9 +110,9 @@ static void reloadPrefs() {
 		}
 
 		currentSessionCount++;
-		%orig(arg1, arg2);
+		%orig(arg1);
 	} else {
-		%orig(arg1, arg2);
+		%orig(arg1);
 	}
 }
 %end
