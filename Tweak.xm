@@ -39,7 +39,7 @@ static void reloadPrefs() {
 			CFRelease(keyList);
 		}
 	} else {
-		prefs = [NSDictionary dictionaryWithContentsOfFile:kSettingsPath];
+		prefs = [[NSDictionary alloc] initWithContentsOfFile:kSettingsPath];
 	}
 
 	isEnabled = [prefs objectForKey:@"isEnabled"] ? [[prefs objectForKey:@"isEnabled"] boolValue] : YES;
